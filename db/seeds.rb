@@ -5,10 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Resetting Movies"
+puts "Resetting Tables"
 
 Movie.destroy_all
+Cart.destroy_all
 # Rental.destroy
+# User.destroy
 
 puts "Seeding Movies"
 
@@ -32,6 +34,10 @@ m17 = Movie.create(title: "The Birdcage", poster_url: "https://www.themoviedb.or
 m18 = Movie.create(title: "Hook", poster_url: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/a6rB1lGXoGms7gWxRfJneQmAjNV.jpg", mpaa: "PG", year: 1991, runtime: 144, synopsis: "The boy who wasn't supposed grow up—Peter Pan—does just that, becoming a soulless corporate lawyer whose workaholism could cost him his wife and kids. During his trip to see Granny Wendy in London, the vengeful Capt. Hook kidnaps Peter's kids and forces Peter to return to Neverland.", availability: true)
 m19 = Movie.create(title: "The Nightmare Before Christmas", poster_url: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg", mpaa: "PG", year: 1993, runtime: 76, synopsis: "Tired of scaring humans every October 31 with the same old bag of tricks, Jack Skellington, the spindly king of Halloween Town, kidnaps Santa Claus and plans to deliver shrunken heads and other ghoulish gifts to children on Christmas morning. But as Christmas approaches, Jack's rag-doll girlfriend, Sally, tries to foil his misguided plans.", availability: true)
 m20 = Movie.create(title: "The Sandlot", poster_url: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7PYqz0viEuW8qTvuGinUMjDWMnj.jpg", mpaa: "PG", year: 1993, runtime: 101, synopsis: "During a summer of friendship and adventure, one boy becomes a part of the gang, nine boys become a team and their leader becomes a legend by confronting the terrifying mystery beyond the right field wall.", availability: true)
+
+puts "Loading Carts"
+
+cart = Cart.create
 
 puts "Resetting Rentals"
 
