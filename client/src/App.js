@@ -1,14 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const logo = 'https://clipartix.com/wp-content/uploads/2016/06/Movie-reel-svg-vector-file-vector-clip-art-svg-file-clipartsfree.png'
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Flatiron Movie Rentals</h1>
         <a
           className="App-link"
           href="https://reactjs.org"
