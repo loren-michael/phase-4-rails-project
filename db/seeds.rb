@@ -1,5 +1,6 @@
 puts "Resetting Tables"
 
+Rental.destroy_all
 Movie.destroy_all
 Store.destroy_all
 User.destroy_all
