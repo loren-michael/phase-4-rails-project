@@ -8,6 +8,7 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.integer :runtime
       t.string :synopsis
       t.boolean :availability
+      t.references :store, null: false, foreign_key: true
 
       t.timestamps
     end

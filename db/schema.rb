@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_05_193631) do
+ActiveRecord::Schema.define(version: 2023_01_05_195849) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2023_01_05_193631) do
     t.integer "runtime"
     t.string "synopsis"
     t.boolean "availability"
+    t.integer "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_movies_on_store_id"
   end
 
   create_table "rentals", force: :cascade do |t|
@@ -29,7 +31,9 @@ ActiveRecord::Schema.define(version: 2023_01_05_193631) do
     t.integer "movie_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "store_id", null: false
     t.index ["movie_id"], name: "index_rentals_on_movie_id"
+    t.index ["store_id"], name: "index_rentals_on_store_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
   end
 
@@ -46,6 +50,8 @@ ActiveRecord::Schema.define(version: 2023_01_05_193631) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "movies", "stores"
   add_foreign_key "rentals", "movies"
+  add_foreign_key "rentals", "stores"
   add_foreign_key "rentals", "users"
 end
