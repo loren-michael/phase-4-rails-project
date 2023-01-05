@@ -8,7 +8,6 @@
 puts "Resetting Tables"
 
 Movie.destroy_all
-Cart.destroy_all
 # Rental.destroy
 # User.destroy
 
@@ -37,7 +36,13 @@ m20 = Movie.create(title: "The Sandlot", poster_url: "https://www.themoviedb.org
 
 puts "Loading Carts"
 
-cart = Cart.create
+u1 = User.create(username: user1, password: "password")
+u2 = User.create(username: user2, password: "password")
+u3 = User.create(username: user3, password: "password")
+u4 = User.create(username: user4, password: "password")
+u5 = User.create(username: user5, password: "password")
+
+
 
 puts "Resetting Rentals"
 
