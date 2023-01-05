@@ -1,3 +1,4 @@
 class Movie < ApplicationRecord
-  # belongs_to :store, dependent: :destroy
+  validates :title, presence: true
+  belongs_to :store
 end
