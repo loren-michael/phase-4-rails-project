@@ -5,25 +5,25 @@ class MoviesController < ApplicationController
   end
 
   def create
-    movie = Movie.create(movie_params)
+    movie = @current_user.movies.create!(movie_params)
     render json: movie, status: :created
   end
 
   def show
     find_movie
-    render json: movie
+    render json: @movie
   end
 
   def destroy
     find_movie
-    movie.destroy
+    @movie.destroy
     render json: { message: "Movie has been removed"}, status: :accepted
   end
 
   private
 
     def find_movie
-      movie = Movie.find_by(id: params[:id])
+      @movie = Movie.find_by(id: params[:id])
     end
 
     def movie_params
